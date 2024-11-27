@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,25 @@
     <!-- Tailwind css & Daisy ui -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Styles/style.css">
     
 </head>
-<body>
-    <header>
+<body class="font-raleway">
+    <header class="mx-12 mt-10">
         <!-- nav section  -->
-         
+         <div class="flex justify-around">
+            <h3 class="text-3xl font-bold">Online Ticket</h3>
+            <ul class="flex gap-8 cursor-pointer items-center text-gray-700">
+                <li>Home</li>
+                <li>About</li>
+                <li>Destination</li>
+                <li>Search</li>
+            </ul>
+            <button class="btn  btn-success bg-[#1dd1001a] hover:bg-[#1dd1001a] px-6">
+                <span class="text-[#1DD100]">Bus</span>
+                <img src="images/bus-icon.png" alt="">
+              </button>
+         </div>
     </header>
     <main></main>
     <footer></footer>
