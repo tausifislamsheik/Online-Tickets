@@ -271,6 +271,8 @@
                </div>
              </div>
             </div>
+            <!-- vertical line -->
+            <div class="border h-screen"></div>
         <!-- calculation section -->
             <div>
               <div class="bg-[#F7F8F8] p-10 px-20 rounded-2xl">
@@ -288,7 +290,7 @@
                 </div>
                 <div class="join mt-3 mb-4">
                   <input class="input input-bordered join-item" placeholder="Have any copupon?" />
-                  <button class="btn join-item rounded-xl">Apply</button>
+                  <button class="btn join-item rounded-xl bg-[#1DD100] hover:bg-[#1ADC00] text-white" disabled>Apply</button>
                 </div>
                 <div class="flex justify-between font-bold">
                   <p>Grand Total</p>
@@ -296,9 +298,43 @@
                 </div>
                </div>
 
-               <div>
-                <h1>Passenger Name*</h1>
-                <input class="px-16 border" type="text" name="" id="" placeholder="Enter your name">
+               <div class="hero">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                  
+                  <div class="card bg-base-100 w-full shrink-0 ">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-bold text-lg">Passenger Name<span class="text-red-600">*</span></span>
+                        </label>
+                        <input type="email" placeholder="Enter your name" class="input input-bordered w-96" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-bold text-lg">Phone Number<span class="text-red-600">*</span></span>
+                        </label>
+                        <input type="password" placeholder="Enter your phone number" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-bold text-lg">Email ID</span>
+                        </label>
+                        <input type="password" placeholder="Enter your email id" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control mt-6">
+                        <button class="btn bg-[#1DD100] hover:bg-[#1ADC00] text-white">Next</button>
+                      </div>
+                      <div class="flex justify-around ">
+                        <label class="label">
+                          <a href="#" class="label-text-alt link link-hover text-gray-500">Terms and Conditions</a>
+                        </label>
+                        <label class="label">
+                          <a href="#" class="label-text-alt link link-hover text-gray-500">Cancellation Policy</a>
+                        </label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
 
             </div>
