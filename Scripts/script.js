@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form Validation
     function validateForm() {
         const isNameValid = nameInput.value.trim() !== '';
-        const isPhoneValid = phoneInput.value.trim().length >= 10;
+        const isPhoneValid = phoneInput.value.trim().length >= 11;
         const hasSelectedSeats = selectedSeats.length > 0;
         
         // Enable Next button only if all conditions are met
@@ -123,23 +123,44 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Booking Confirmation
     nextBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        // Double-check validation (just in case)
-        if (nextBtn.disabled) return;
-        
-        const summary = `
-            ✅ Booking Confirmed!\n\n
-            🧍 Passenger: ${nameInput.value}\n
-            📞 Phone: ${phoneInput.value}\n
-            ✉️ Email: ${emailInput.value || 'Not Provided'}\n
-            💺 Seats: ${selectedSeats.join(', ')}\n
-            💳 Grand Total: BDT ${grandTotalEl.textContent}
-        `;
-        
-        alert(summary);
-        resetBooking();
-    });
+  e.preventDefault();
+
+  if (nextBtn.disabled) return;
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Booking Confirmed!',
+    html: `
+      <div style="text-align: left;">
+        <b>Passenger:</b> ${nameInput.value}<br>
+        <b>Phone:</b> ${phoneInput.value}<br>
+        <b>Email:</b> ${emailInput.value || 'Not Provided'}<br>
+        <b>Seats:</b> ${selectedSeats.join(', ')}<br>
+        <b>Total:</b> BDT ${grandTotalEl.textContent}
+      </div>
+    `,
+    confirmButtonColor: '#1DD100',
+    confirmButtonText: 'Continue'
+  });
+
+  resetBooking();
+});
+
+
+    // Toast alert section
+
+//     function showToast(message) {
+//   const toastContainer = document.getElementById('toast-container');
+//   const toastText = document.getElementById('toast-text');
+
+//   toastText.innerText = message;
+//   toastContainer.classList.remove('hidden');
+
+//   setTimeout(() => {
+//     toastContainer.classList.add('hidden');
+//   }, 10000); // Hide after 4 seconds
+// }
+
     
     // Reset Booking
     function resetBooking() {
