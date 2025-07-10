@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const seatCountEl = document.getElementById('seat-count');
     const couponInput = document.getElementById('coupon-input');
     const applyBtn = document.getElementById('apply-btn');
-    const nextBtn = document.querySelector('button[class*="bg-\\[#1DD100\\]"]');
+    const nextBtn = document.querySelector('#next-btn');
     const nameInput = document.querySelector('input[placeholder="Enter your name"]');
     const phoneInput = document.querySelector('input[placeholder="Enter your phone number"]');
     const emailInput = document.querySelector('input[placeholder="Enter your email id"]');
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize
     updateSeatList();
+    validateForm(); // Initialize button state
     
     // Seat Selection
     seats.forEach(seat => {
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             updateSeatList();
+            validateForm(); // Validate after seat change
         });
     });
     
@@ -71,17 +73,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Form Validation
+    function validateForm() {
+        const isNameValid = nameInput.value.trim() !== '';
+        const isPhoneValid = phoneInput.value.trim().length >= 10;
+        const hasSelectedSeats = selectedSeats.length > 0;
+        
+        // Enable Next button only if all conditions are met
+        nextBtn.disabled = !(isNameValid && isPhoneValid && hasSelectedSeats);
+
+        if(isNameValid && isPhoneValid && hasSelectedSeats){
+            nextBtn.classList.remove('disabled')
+        }else{
+            nextBtn.classList.add('disabled')
+        }
+        
+        // Visual feedback (optional)
+        nameInput.style.borderColor = isNameValid ? '#1DD100' : '#ff0000';
+        phoneInput.style.borderColor = isPhoneValid ? '#1DD100' : '#ff0000';
+    }
+    
+    // Add input event listeners for real-time validation
     [nameInput, phoneInput].forEach(input => {
         input.addEventListener('input', validateForm);
     });
-    
-    function validateForm() {
-        const isValid = nameInput.value.trim() !== '' &&
-                      phoneInput.value.trim().length >= 10 &&
-                      selectedSeats.length > 0;
-        
-        nextBtn.disabled = !isValid;
-    }
     
     // Update Seat List and Totals
     function updateSeatList() {
@@ -104,12 +118,15 @@ document.addEventListener('DOMContentLoaded', function() {
         grandTotalEl.textContent = Math.floor(total - (total * appliedDiscount));
         
         applyBtn.disabled = selectedSeats.length === 0;
-        validateForm();
+        validateForm(); // Re-validate after seat changes
     }
     
     // Booking Confirmation
     nextBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        
+        // Double-check validation (just in case)
+        if (nextBtn.disabled) return;
         
         const summary = `
             ✅ Booking Confirmed!\n\n
@@ -126,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Reset Booking
     function resetBooking() {
+        // Reset selected seats
         selectedSeats.forEach(seatId => {
             const seat = document.getElementById(seatId);
             if (seat) {
@@ -134,8 +152,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        // Reset state
         selectedSeats = [];
         appliedDiscount = 0;
+        
+        // Reset UI
         seatList.innerHTML = '';
         seatCountEl.textContent = '0';
         totalPriceEl.textContent = '0';
@@ -144,7 +165,13 @@ document.addEventListener('DOMContentLoaded', function() {
         nameInput.value = '';
         phoneInput.value = '';
         emailInput.value = '';
+        
+        // Reset buttons
         applyBtn.disabled = true;
         nextBtn.disabled = true;
+        
+        // Reset input borders (if using visual feedback)
+        nameInput.style.borderColor = '';
+        phoneInput.style.borderColor = '';
     }
 });
