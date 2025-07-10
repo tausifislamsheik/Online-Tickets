@@ -82,7 +82,7 @@
               <div class="p-10">
                 <h1 class="text-3xl font-extrabold">15% OFF</h1>
                 <p class="font-bold">on your next purchase</p>
-                <p class="text-gray-500">use by January 2024</p>
+                <p class="text-gray-500">use by January 2026</p>
               </div>
               <img src="images/cupon-devider.png" alt="">
               <div class="p-10">
@@ -96,11 +96,11 @@
               <div class="p-10 ">
                 <h1 class="text-3xl font-extrabold">20% OFF</h1>
                 <p class="font-bold">on your next purchase</p>
-                <p class="text-gray-500">use by January 2024</p>
+                <p class="text-gray-500">use by January 2026</p>
               </div>
               <img src="images/cupon-devider.png" alt="">
               <div class="p-10">
-                <h1 class="text-2xl font-bold">Couple20</h1>
+                <h1 class="text-2xl font-bold">COUPLE20</h1>
                 <p class="text-gray-500">Coupon Code</p>
               </div>
             </div>
@@ -235,6 +235,7 @@
                </div>
          
                <!-- Row G (with selected seat) -->
+                
                <div class="flex gap-4 mb-4">
                  <p class="p-3 w-12">G</p>
                  <div class="seat seat-available bg-[#F7F8F8] px-6 py-3 min-w-20 rounded-xl text-gray-500 cursor-pointer" id="G1">G1</div>
@@ -271,30 +272,34 @@
                </div>
              </div>
             </div>
+
             <!-- vertical line -->
+
             <div class="border h-screen"></div>
+
         <!-- calculation section -->
+
             <div>
               <div class="bg-[#F7F8F8] p-10 px-20 rounded-2xl">
                 <div class="flex justify-between font-bold">
-                  <p class="text-lg">Seat <sup class="bg-[#1DD100] text-white px-2 rounded-full text-sm">0</sup></p>
+                  <p class="text-lg">Seat <sup id="seat-count" class="bg-[#1DD100] text-white px-2 rounded-full text-sm">0</sup></p>
                   <p class="text-lg">Class</p>
                   <p class="text-lg">Price</p>
                 </div>
                 <hr class="border-dashed bg-black mt-4">
-                <div id="total-ticket-container"></div>
-                <hr class="bg-black">
+                <div id="total-ticket-list"></div>
+                <hr class="bg-black mt-2">
                 <div class="flex justify-between font-bold mt-3">
                   <p class="text-lg">Total Price</p>
-                  <p class="text-lg">BDT <span>0</span></p>
+                  <p class="text-lg">BDT <span id="total-price">0</span></p>
                 </div>
                 <div class="join mt-3 mb-4">
-                  <input class="input input-bordered join-item" placeholder="Have any coupon?" />
-                  <button class="btn join-item rounded-xl bg-[#1DD100] hover:bg-[#1ADC00] text-white" disabled>Apply</button>
+                  <input id="coupon-input" class="input input-bordered join-item" placeholder="Have any coupon?" />
+                  <button id="apply-btn" class="btn join-item rounded-xl bg-[#1DD100] hover:bg-[#1ADC00] text-white" disabled>Apply</button>
                 </div>
                 <div class="flex justify-between font-bold">
                   <p class="text-lg">Grand Total</p>
-                  <p class="text-lg">BDT <span>0</span></p>
+                  <p class="text-lg">BDT <span id="grand-total">0</span></p>
                 </div>
                </div>
 
@@ -346,6 +351,7 @@
     </main>
 
     <!-- Footer section -->
+
     <footer class="bg-[#030712]">
         <div class="text-white flex justify-between p-20">
           <div>
