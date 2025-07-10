@@ -129,9 +129,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   Swal.fire({
     icon: 'success',
-    title: 'Booking Confirmed!',
+    title: `Booking Confirmed!`,
     html: `
-      <div style="text-align: left;">
+    <p class='mb-3 -mt-2 text-gray-400'>Thank you for Booking Our Bus Seats. 
+        We are working hard to find the best service and deals for you.</p>
+      <div class='text-left'>
         <b>Passenger:</b> ${nameInput.value}<br>
         <b>Phone:</b> ${phoneInput.value}<br>
         <b>Email:</b> ${emailInput.value || 'Not Provided'}<br>
@@ -140,26 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     `,
     confirmButtonColor: '#1DD100',
-    confirmButtonText: 'Continue'
+    confirmButtonText: 'Done'
   });
 
   resetBooking();
 });
-
-
-    // Toast alert section
-
-//     function showToast(message) {
-//   const toastContainer = document.getElementById('toast-container');
-//   const toastText = document.getElementById('toast-text');
-
-//   toastText.innerText = message;
-//   toastContainer.classList.remove('hidden');
-
-//   setTimeout(() => {
-//     toastContainer.classList.add('hidden');
-//   }, 10000); // Hide after 4 seconds
-// }
 
     
     // Reset Booking
