@@ -131,14 +131,12 @@ document.addEventListener('DOMContentLoaded', function() {
     icon: 'success',
     title: `Booking Confirmed!`,
     html: `
-    <p class='mb-3 -mt-2 text-gray-400'>Thank you for Booking Our Bus Seats. 
-        We are working hard to find the best service and deals for you.</p>
       <div class='text-left font-inter'>
-        <b>Passenger:</b> <span class='text-green-600'>${nameInput.value}</span><br>
-        <b>Phone:</b> <span class='text-green-600'>${phoneInput.value}</span><br>
-        <b>Email:</b> <span class='text-green-600'>${emailInput.value || 'Not Provided'}</span><br>
-        <b>Seats:</b> <span class='text-green-600'>${selectedSeats.join(', ')}</span><br>
-        <b>Total:</b> <span class='text-green-600'>${grandTotalEl.textContent} BDT</span>
+        <b>Passenger:</b> <span class='text-gray-500'>${nameInput.value}</span><br>
+        <b>Phone:</b> <span class='text-gray-500'>${phoneInput.value}</span><br>
+        <b>Email:</b> <span class='text-gray-500'>${emailInput.value || 'Not Provided'}</span><br>
+        <b>Seats:</b> <span class='text-gray-500'>${selectedSeats.join(', ')}</span><br>
+        <b>Total:</b> <span class='text-gray-500'>${grandTotalEl.textContent} BDT</span>
       </div>
     `,
     confirmButtonColor: '#1DD100',
