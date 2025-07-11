@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const SEAT_PRICE = 550;
     const MAX_SEATS = 4;
     
+    
     // DOM Elements
     const seats = document.querySelectorAll('.seat:not(.cursor-not-allowed)');
     const seatList = document.getElementById('total-ticket-list');
