@@ -19,21 +19,41 @@
     <header>
         <!-- nav section  -->
         
-         <section class="pt-10 px-4 sm:px-8 lg:px-16">
+    <section class="pt-10 px-4 sm:px-8 lg:px-16">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
         <h3 class="text-3xl font-bold text-green-500">Online Ticket</h3>
         <ul class="flex flex-wrap justify-center gap-4 md:gap-8 text-gray-700 font-semibold">
-          <li class="hover:text-green-500 cursor-pointer">Home</li>
-          <li class="hover:text-green-500 cursor-pointer">About</li>
-          <li class="hover:text-green-500 cursor-pointer">Destination</li>
-          <li class="hover:text-green-500 cursor-pointer">Search</li>
+          <li class="group relative hover:text-green-500 cursor-pointer">
+            <span class="relative">
+              Home
+              <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </li>
+          <li class="group relative hover:text-green-500 cursor-pointer">
+            <span class="relative">
+              About
+              <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </li>
+          <li class="group relative hover:text-green-500 cursor-pointer">
+            <span class="relative">
+              Destination
+              <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </li>
+          <li class="group relative hover:text-green-500 cursor-pointer">
+            <span class="relative">
+              Search
+              <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </li>
         </ul>
         <button class="btn btn-success bg-[#1dd1001a] hover:bg-[#1dd1001a] px-6">
           <span class="text-[#1DD100] font-bold text-lg">Bus</span>
           <img src="images/bus-icon.png" alt="">
         </button>
       </div>
-    </section>
+  </section>
 
 
    <!-- banner section  -->
@@ -128,7 +148,7 @@
 
   <!-- Bus Details -->
   <section class="flex flex-col lg:flex-row bg-white rounded-3xl mb-10">
-    <div class="w-full lg:w-2/3 p-6">
+    <div class="w-full lg:w-11/12 p-6">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
         <div class="flex gap-3 items-center">
           <img class="h-16" src="images/bus-logo.png" alt="">
