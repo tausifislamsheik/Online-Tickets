@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Constants
     const SEAT_PRICE = 550;
     const MAX_SEATS = 4;
-    
+    let seatsLeft = 40;
     
     // DOM Elements
     const seats = document.querySelectorAll('.seat:not(.cursor-not-allowed)');
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalPriceEl = document.getElementById('total-price');
     const grandTotalEl = document.getElementById('grand-total');
     const seatCountEl = document.getElementById('seat-count');
+    const seatsLeftEl = document.getElementById('seats-left')
     const couponInput = document.getElementById('coupon-input');
     const applyBtn = document.getElementById('apply-btn');
     const nextBtn = document.querySelector('#next-btn');
@@ -46,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 seat.classList.remove('bg-[#F7F8F8]', 'text-gray-500');
                 seat.classList.add('bg-[#1DD100]', 'text-white', 'selected');
                 selectedSeats.push(seatId);
+                seatsLeft--; // Decrement available seats when selected
+                seatsLeftEl.textContent = seatsLeft;
             }
             
             updateSeatList();
@@ -164,6 +167,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset state
         selectedSeats = [];
         appliedDiscount = 0;
+         seatsLeft = 40;
+        seatsLeftEl.textContent = seatsLeft;
         
         // Reset UI
         seatList.innerHTML = '';
