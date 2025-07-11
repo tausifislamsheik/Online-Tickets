@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         selectedSeats.forEach(seatId => {
             const seatElement = document.createElement('div');
-            seatElement.className = 'flex justify-between mt-2 text-gray-400';
+            seatElement.className = 'flex justify-between mt-2 text-gray-400 px-2';
             seatElement.innerHTML = `
                 <p class="text-sm font-medium">${seatId}</p>
                 <p class="text-sm font-medium">Economy</p>
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
     html: `
     <p class='mb-3 -mt-2 text-gray-400'>Thank you for Booking Our Bus Seats. 
         We are working hard to find the best service and deals for you.</p>
-      <div class='text-left'>
+      <div class='text-left font-inter'>
         <b>Passenger:</b> ${nameInput.value}<br>
         <b>Phone:</b> ${phoneInput.value}<br>
         <b>Email:</b> ${emailInput.value || 'Not Provided'}<br>
