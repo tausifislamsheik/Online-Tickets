@@ -27,13 +27,6 @@ A responsive and interactive ticket booking platform built using **HTML**, **Tai
 
 ---
 
-## 📸 Screenshots
-
-![Online Tickets Preview]("https://github.com/user-attachments/assets/4e579265-1714-4ea6-a125-6542bbb7c835")
-
-
----
-
 ## 🛠️ Technologies Used
 
 - HTML5  
@@ -50,16 +43,23 @@ A responsive and interactive ticket booking platform built using **HTML**, **Tai
 ```bash
 git clone https://github.com/tausifislamsheik/Online-Tickets.git
 
+```
 
 📌 Project Status
 ✅ Completed basic version
 🔄 Improvements planned (e.g., dynamic API integration, seat reservation backend)
 
 🙋‍♂️ Author
-👨‍💻 Tausif Islam Sheik
+👨‍💻 [Tausif Islam Sheik](https://github.com/tausifislamsheik)
 
 💬 Feedback
 If you find a bug or have a feature request, feel free to open an issue or create a pull request.
 
 ⭐ Support
 If you like this project, please give it a ⭐ on GitHub!
+
+
+## Project Screenshot
+
+<img width="1920" height="4483" alt="tausifislamsheik github io-Online Tickets-fpscreenshot" src="https://github.com/user-attachments/assets/8cf35fa9-c76a-46ba-bd06-8c699963e86f" />
+
