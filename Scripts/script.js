@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 // Check max seats
                 if (selectedSeats.length >= MAX_SEATS) {
-                    alert(`You can select a maximum of ${MAX_SEATS} seats.`);
+                    showToast(`You can select a maximum of ${MAX_SEATS} seats.`);
                     return;
                 }
                 
@@ -59,10 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (coupon === 'COUPLE20') {
             appliedDiscount = 0.2;
+            showToast('Coupon Verified', 'success');
         } else if (coupon === 'NEW15') {
             appliedDiscount = 0.15;
+            showToast('Coupon Verified', 'success');
         } else {
-            alert('Invalid coupon code');
+            showToast('Invalid coupon code');
             return;
         }
         
@@ -188,4 +190,44 @@ document.addEventListener('DOMContentLoaded', function() {
 const scrollToViewMore = () =>{
     const seatSection = document.querySelector('#seat-container');
     seatSection.scrollIntoView({ behavior: 'smooth' });
-}
+};
+
+
+// Toast functions
+const showToast = (message, type = 'error') => {
+  const toast = document.getElementById('toast');
+  const toastMessage = document.getElementById('toast-message');
+  
+  // Set message and style based on type
+  toastMessage.textContent = message;
+  toast.firstElementChild.className = 
+    `px-4 py-3 rounded-lg shadow-lg flex items-center animate-fade-in ${
+      type === 'error' ? 'bg-red-500' : 
+      type === 'success' ? 'bg-green-500' : 
+      'bg-blue-500'
+    } text-white`;
+  
+  toast.classList.remove('hidden');
+  
+  // Auto-hide after 5 seconds
+  setTimeout(hideToast, 5000);
+};
+
+const hideToast = () => {
+  document.getElementById('toast').classList.add('hidden');
+};
+
+// Example usage
+
+
+const validateNumber = () => {
+  const input = document.getElementById('number-input');
+  const value = parseInt(input.value);
+  
+  if (isNaN(value)) {
+    showToast("Please enter a valid number!", 'error');
+    input.focus();
+  } else {
+    showToast("Valid number entered!", 'success');
+  }
+};
