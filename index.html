@@ -46,7 +46,7 @@
               End-to-End Travel with <br><span class="text-[#1DD100]">Greenline Paribahan</span>
             </h1>
             <p class="text-sm sm:text-base">Yes, you can run unit tests and view the results directly within the app. <br>The integrated testing features allow for a streamlined experience.</p>
-            <button class="btn btn-primary bg-[#1DD100] text-white hover:bg-[#1DD100] border-none">Buy Tickets</button>
+            <button onclick='scrollToViewMore()' class="btn btn-primary bg-[#1DD100] text-white hover:bg-[#1DD100] border-none">Buy Tickets</button>
           </div>
         </div>
       </div>
@@ -137,7 +137,7 @@
             <p class="text-gray-500 text-sm sm:text-base">Coach-009-WEB ! AC_Business</p>
           </div>
         </div>
-        <p class="flex bg-[#1dd10026] items-center gap-1 px-4 py-2 rounded-2xl text-[#1DD100] font-bold text-sm">
+        <p class="flex bg-[#1dd10026] items-center gap-1 px-4 py-3 rounded-xl text-[#1DD100] font-bold text-sm">
           <img src="images/seat-green.png" alt=""> <span>40</span> Seats left
         </p>
       </div>
@@ -145,18 +145,18 @@
       <div class="bg-[#F7F8F8] p-6 sm:p-8 rounded-2xl mt-6 space-y-4">
         <div class="flex justify-between">
           <h5 class="text-gray-500">Route</h5>
-          <h5 class="font-bold">Dhaka - Sylhet</h5>
+          <h5 class="font-semibold">Dhaka - Sylhet</h5>
         </div>
         <hr class="border-dashed">
         <div class="flex justify-between">
           <h5 class="text-gray-500">Departure Time</h5>
-          <h5 class="font-bold">9:00 PM</h5>
+          <h5 class="font-semibold">9:00 PM</h5>
         </div>
         <hr class="border-dashed">
         <div class="flex flex-col md:flex-row justify-between gap-4">
-          <p class="bg-[#0307120d] p-3 rounded-xl font-bold text-center">Boarding Point - Laxmipur</p>
-          <p class="bg-[#0307120d] p-3 rounded-xl font-bold text-center">Dropping Point - Bogura</p>
-          <p class="bg-[#0307120d] p-3 rounded-xl font-bold text-center">Est. Time - 11 Hour</p>
+          <p class="bg-[#0307120d] p-3 rounded-xl font-semibold text-center">Boarding Point - Sayedabad</p>
+          <p class="bg-[#0307120d] p-3 rounded-xl font-semibold text-center">Dropping Point - Humayun Chattor</p>
+          <p class="bg-[#0307120d] p-3 rounded-xl font-semibold text-center">Est. Time - 11 Hour</p>
         </div>
       </div>
     </div>
@@ -170,7 +170,7 @@
     </div>
   </section>
        <!-- passenger seat & calculation section -->
-        <section class="bg-white rounded-3xl p-10 mb-20">
+        <section id="seat-container" class="bg-white rounded-3xl p-10 mb-20">
           <div class="flex flex-col lg:flex-row gap-8">
             <!-- seat section -->
             <div class="w-3/5">

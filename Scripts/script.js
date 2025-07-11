@@ -180,4 +180,12 @@ document.addEventListener('DOMContentLoaded', function() {
         nameInput.style.borderColor = '';
         phoneInput.style.borderColor = '';
     }
+    
 });
+
+// Buy tickets button scroll functionality
+
+const scrollToViewMore = () =>{
+    const seatSection = document.querySelector('#seat-container');
+    seatSection.scrollIntoView({ behavior: 'smooth' });
+}
